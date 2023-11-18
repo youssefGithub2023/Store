@@ -1,0 +1,1534 @@
+/* Start main properties */
+:root {
+    /* Theme 1 */
+    /* --c1: #ea00ff;
+    --c2: #00dacf;
+    --fc: #fff;
+    --sc: #06b300;
+    --btn-edit: #ccbe00;
+    --btn-delete: #cc0000;
+    --btn-activate: #00cc00;
+    --btn-details: #cc5500; */
+
+    /* Theme 2 */
+    --c1: #b3fff8;
+    --c2: #ffd7ac;
+    --fc: #000;
+    /* --sc: #00e2e9; */
+    --sc: #ff6200;
+    --table-odd: #00e2e922;
+    --btn-edit: #ccff00;
+    --btn-delete: #ff0000;
+    --btn-activate: #00ff00;
+    --btn-details: #ff5500;
+
+
+    /* Theme 3 */
+    /* --c1: #48ff42;
+    --c2: #00dacf;
+    --fc: #fff;
+    --sc: #d68100;
+    --btn-edit: #ccbe00;
+    --btn-delete: #cc0000;
+    --btn-activate: #00cc00;
+    --btn-details: #cc5500; */
+
+    
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, tahoma, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, var(--c1), var(--c2));
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.get-info {
+    font-weight: 600;
+}
+
+.get-info form {
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+input, button, select {
+    outline: 0
+}
+
+button {
+    cursor: pointer
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+li {
+    
+}
+
+a {
+    text-decoration: none
+}
+
+.alert,
+.worning,
+.success {
+    box-sizing: border-box;
+    width: 100% !important;
+    padding: 10px;
+    margin: 10px 0;
+    color: var(--fc);
+    font-weight: bold;
+    font-size: 18px
+}
+
+.alert {
+    background-color: #f35757aa;
+    border: 2px solid #ff2828;
+}
+
+.worning {
+    background-color: #ffff57aa;
+    border: 2px solid #ffff28;
+}
+
+.success {
+    background-color: #57ff57aa;
+    border: 2px solid #28ff28;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--sc);
+    font-size: 24px;
+}
+
+.cont-inputs {
+    overflow: hidden
+}
+
+.cont-inputs .left {
+    float: left;
+    width: calc(50% - 50px);
+}
+
+.cont-inputs .right {
+    float: right;
+    width: calc(50% - 50px);
+}
+
+.form-label {
+    padding-left: 8px;
+    color: var(--sc);
+}
+
+.form-group {
+    display: flex;
+    margin: 4px 0 14px;
+}
+
+.form-group .icon {
+    padding: 4px 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--fc);
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    width: 32px;
+    text-align: center;
+    color: var(--sc);
+    position: relative;
+}
+
+.form-group .icon:after {
+    content: "";
+    width: 2px;
+    height: 14px;
+    display: block;
+    background-color: var(--sc);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.form-group .icon i {
+    padding: 4px 8px
+}
+
+.form-group input,
+.form-group select {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--fc);
+    color: var(--fc);
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    padding-left: 8px;
+    font-size: 16px
+}
+
+.form-group select {
+    color: #000;
+}
+
+.form-group input[type="file"] {
+    height: auto;
+    padding-top: 4px;
+}
+
+.btn {
+    display: block;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding: 8px 50px;
+    border-radius: 20px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border: 2px solid var(--sc);
+    color: var(--sc);
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .3s ease-in-out
+}
+
+.btn:hover {
+    color: var(--fc);
+    background-color: var(--sc);
+    border-color: var(--fc)
+}
+
+input:focus::placeholder,
+input:focus::-webkit-input-placeholder {
+    transition: all .5s ease-in-out;
+}
+
+input:focus::placeholder,
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+    transform: translateX(-20%);
+}
+
+.edit,
+.delete,
+.activate,
+.details {
+    padding: 4px 8px;
+    color: var(--fc);
+    font-weight: bold;
+    border-radius: 4px;
+    border: 2px solid var(--fc);
+    transition: all .3s ease-in-out
+}
+
+.edit i,
+.delete i,
+.activate i,
+.details i {
+    margin-right: 5px
+}
+
+.edit {
+    background-color: var(--btn-edit)
+}
+
+.edit:hover {
+    color: var(--btn-edit);
+    border-color: var(--btn-edit);
+    background-color: var(--fc)
+}
+
+.delete {
+    background-color: var(--btn-delete)
+}
+
+.delete:hover {
+    color: var(--btn-delete);
+    border-color: var(--btn-delete);
+    background-color: var(--fc)
+}
+
+.activate {
+    background-color: var(--btn-activate)
+}
+
+.activate:hover {
+    color: var(--btn-activate);
+    border-color: var(--btn-activate);
+    background-color: var(--fc)
+}
+
+.details {
+    background-color: var(--btn-details)
+}
+
+.details:hover {
+    color: var(--btn-details);
+    border-color: var(--btn-details);
+    background-color: var(--fc)
+}
+
+.add {
+    background-image: linear-gradient(45deg, var(--c2), var(--c1));
+    color: var(--fc);
+    font-weight: bold;
+    padding: 8px 24px;
+    display: inline-block;
+    margin-top: 20px;
+    width: max-content;
+    border-radius: 4px;
+    border: 2px solid var(--fc);
+}
+
+.add:hover {
+    background-image: linear-gradient(45deg, var(--c1), var(--c2));
+}
+
+.add i {
+    margin-right: 5px
+}
+
+.hide {
+    display: none !important
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0
+}
+
+.head h1 {
+    margin: 0
+}
+
+.totalSec {
+    line-height: 28px;
+    border: 2px solid var(--fc);
+    padding: 4px 12px;
+    font-weight: bold
+}
+
+.totalSec .totalText {
+    color: var(--fc);
+}
+
+.totalSec .totalResult {
+    color: var(--fc);
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0
+}
+/* End main properties */
+
+
+/* Start login section properties */
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login form {
+    width: 320px;
+    padding: 24px;
+    border-radius: 24px;
+    background-color: var(--fc);
+    border: 2px solid var(--sc);
+    border-bottom: 4px solid var(--sc);
+}
+
+.login form label.c1 {
+    color: var(--c2)
+}
+
+.login form label.c2 {
+    color: var(--c1)
+}
+
+.login form .form-group .icon.c1 {
+    border-color: var(--c2);
+    color: var(--c2)
+}
+
+.login form .form-group .icon.c1:after{
+    background-color: var(--c2);
+}
+
+.login form .form-group .icon.c2 {
+    border-color: var(--c1);
+    color: var(--c1)
+}
+
+.login form .form-group .icon.c2:after{
+    background-color: var(--c1);
+}
+
+.login form .form-group input.c1 {
+    border-color: var(--c2);
+    color: var(--c2)
+}
+
+.login form .form-group input.c2 {
+    border-color: var(--c1);
+    color: var(--c1)
+}
+
+.login form button {
+    display: block;
+    background-image: linear-gradient(45deg, var(--c2), var(--c1));
+    padding: 8px 32px;
+    border-radius: 8px;
+    border: none;
+    margin: auto;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--fc);
+}
+
+.login-error {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* End login section properties */
+
+/* Start navbar properties */
+body > header {
+    padding: 24px 0;
+}
+
+header nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+header nav .links {
+    float: left
+}
+
+header nav .links li {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 4px 0
+}
+
+header nav .links li a {
+    color: var(--fc);
+    display: block;
+    transition: all .1s ease-in-out
+}
+
+header nav .links li a:hover {
+    transform: translateY(-2px);
+    color: var(--sc)
+}
+
+header nav  #dropdown-btn {
+    float: right;
+    width: max-content;
+    float: right;
+    cursor: pointer;
+}
+
+header nav  #dropdown-btn span {
+    margin: 0 8px;
+    color: var(--fc)
+}
+
+header nav  #dropdown-btn i {
+    border: 2px solid var(--fc);
+    padding: 4px 8px;
+    box-shadow: 0 0 2px 1px var(--fc);
+    color: var(--fc);
+    transition: all .5s ease-in-out;
+    transition: background-color .3s ease-in-out;
+}
+
+header nav  #dropdown-btn i:hover {
+    background-color: var(--sc)
+}
+
+header nav  #dropdown-btn i.active {
+    background-color: var(--sc);
+}
+
+header nav #dropdown {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% + 20px)) scale(0);
+    right: 0;
+    border: 2px solid var(--fc);
+    width: max-content;
+    font-weight: 600;
+    background-image: linear-gradient(45deg, var(--c2), var(--c1));
+    transition: all .5s ease-in-out;
+    opacity: 0;
+    transform-origin: top;
+}
+
+header nav #dropdown.show {
+    transform: translateY(calc(100% + 20px)) scale(1);
+    opacity: 1;
+}
+
+header nav #dropdown li {
+    
+}
+
+header nav #dropdown li a {
+    color: var(--fc);
+    padding: 8px 32px;
+    display: block;
+    transition: all .3s ease-in-out
+}
+
+header nav #dropdown li a:hover {
+    background-color: var(--sc)
+}
+/* End navbar properties */
+
+/* Start dashboard properties */
+.stats {
+    
+}
+
+.stats .container {
+    display: flex;
+    justify-content: space-between
+}
+
+.stats .container .stat {
+    box-sizing: border-box;
+    flex-basis: calc(25% - 15px);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: var(--c1); */
+    background-image: linear-gradient(45deg, var(--c2), var(--c1)) !important;
+    /* box-shadow: 0 2px 5px var(--fc); */
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    color: var(--fc);
+    cursor: pointer;
+    transition: transform .2s ease-in-out
+}
+
+/* .stats .container .stat:nth-of-type(odd) {
+    background-color: var(--c2);
+} */
+
+.stats .container .stat:hover {
+    transform: translateY(-6px);
+}
+
+.stats .container .stat .stat-icon {
+    font-size: 40px;
+    color: var(--sc)
+}
+
+.stats .container .stat .stat-icon i {
+
+}
+
+.stats .container .stat .stat-body {
+    text-align: right;
+    font-weight: bold
+}
+
+.stats .container .stat .stat-body .stat-title{
+    font-size: 17px
+}
+
+.stats .container .stat .stat-body .stat-result{
+    font-size: 32px;
+}
+
+.latest {
+    padding: 40px 0
+}
+
+.latest .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.latest .container .latest-box {
+    box-sizing: border-box;
+    background-color: var(--c1);
+    flex-basis: calc(50% - 10px);
+    /* box-shadow: 0 2px 5px var(--fc); */
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    color: var(--fc);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 20px
+}
+
+.latest .container .latest-box:nth-child(odd) {
+    background-color: var(--c2);
+}
+
+.latest .container .latest-box h2 {
+    margin: 0;
+    color: var(--sc);
+    overflow: hidden
+}
+
+.latest .container .latest-box h2 i {
+    width: 40px;
+    float: right;
+    text-align: right;
+    cursor: pointer
+}
+
+.latest .container .latest-box ul {
+    
+}
+
+.latest .container .latest-box ul.fadein {
+    
+    display: none
+    
+}
+
+.latest .container .latest-box ul li {
+    padding: 14px 0;
+    position: relative;
+    overflow: hidden
+}
+
+.latest .container .latest-box ul li:before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--c2);
+    
+}
+
+.latest .container .latest-box:nth-child(odd) li:before {
+    background-color: var(--c1)
+}
+
+.latest .container .latest-box ul li:first-child:before {
+    display: none
+}
+
+.latest .container .latest-box ul li a {
+    
+}
+
+.latest .container .latest-box ul li a.left {
+    float: left;
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--fc);
+}
+
+.latest .container .latest-box ul li a.right {
+    padding: 2px 8px;
+    float: right;
+    margin-left: 5px
+}
+
+.latest .container .latest-box .comment-box {
+    margin-top: 14px;
+}
+
+.latest .container .latest-box .comment-box span {
+    padding: 4px 8px;
+    background-color: var(--sc);
+    border-radius: 6px;
+    display: block;
+    width: max-content
+}
+
+.latest .container .latest-box .comment-box span a {
+    color: var(--fc)
+}
+
+.latest .container .latest-box .comment-box .com-body {
+    padding: 8px;
+    background-color: var(--sc);
+    border-radius: 12px;
+    margin-top: 8px;
+    position: relative;
+}
+
+.latest .container .latest-box .comment-box .com-body:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -18px;
+    left: 4px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent transparent var(--sc)
+}
+
+.latest .container .latest-box .comment-box .com-body p {
+    max-height: 80px;
+    overflow-y: auto
+}
+
+.latest .container .latest-box .comment-box .com-body .com-op {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.latest .container .latest-box .comment-box .com-body .com-op a {
+    display: inline-block;
+    margin-left: 5px
+}
+/* End dashboard properties */
+
+/* Start main table */
+table.main-tb {
+    border: 2px solid var(--sc);
+    width: 100%;
+    border-collapse: collapse
+}
+
+table.main-tb tr {
+
+}
+
+table.main-tb th {
+    text-transform: uppercase;
+    background-color: var(--sc)
+}
+
+table.main-tb th a {
+    color: var(--fc)
+}
+
+table.main-tb th,
+table.main-tb td {
+    border: 2px solid var(--sc);
+    padding: 10px 2px;
+    text-align: center;
+    color: var(--fc);
+    font-size: 15px
+}
+
+table.main-tb td figure {
+    border: 1px solid var(--sc);
+    border-radius: 8px;
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    margin: auto
+}
+
+table.main-tb td figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+table.main-tb tbody tr:nth-of-type(2n+1) {
+    background-color: var(--table-odd)
+}
+
+table.main-tb i {
+    margin-right: 5px
+}
+/* End main table */
+
+/* Start members page properties */
+.members-cont {
+
+}
+
+.members-cont .container {
+
+}
+/* End members page properties */
+
+/* Start get info properties */
+.get-info {
+    
+}
+
+.get-info .container {
+
+}
+
+.get-info .container form {
+    
+}
+
+.get-info .container form .desc {
+
+}
+
+.get-info .container form .desc textarea {
+    display: block;
+    width: 100%;
+    outline: 0;
+    border: 2px solid var(--fc);
+    border-radius: 0;
+    padding: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin-top: 4px;
+    resize: none;
+    color: var(--fc);
+    font-size: 16px
+}
+
+.get-info .container form .desc textarea.desc-cat { /* Textarea for category description */
+    height: 262px;
+}
+
+.get-info .container form .desc textarea.desc-item { /* Textarea for item description */
+    height: 254px;
+}
+
+.get-info .container form .cont-radio {
+    margin: 12px 0;
+    color: var(--fc)
+}
+
+.get-info .container form .cont-radio span {
+    display: block;
+    color: var(--sc)
+}
+
+.get-info .container form .cont-radio section {
+    padding: 2px 0 2px 14px;
+}
+
+.get-info .container form .cont-radio section input {
+    margin-top: 2px
+}
+
+.get-info .container form .cont-radio section label {
+
+}
+/* End get info properties */
+
+/* Start categories page properties */
+.categories {
+    
+}
+
+.categories .container {
+
+}
+
+.categories .cat-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0
+}
+
+.categories .container.center {
+    justify-content: center;
+}
+
+.categories .container h1 {
+    margin: 0;
+}
+
+.categories .container .sortAndSearch {
+
+}
+
+.categories .container .sortAndSearch .totalSec {
+    margin-right: 14px;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+.categories .container .sortAndSearch .totalSec .totalText {
+}
+
+.categories .container .sortAndSearch .totalSec .totalResult {
+    
+}
+
+.categories .container .sortAndSearch form {
+    display: inline-block;
+    margin-right: 14px;
+    border: 2px solid var(--fc);
+    
+}
+
+.categories .container .sortAndSearch form input,
+.categories .container .sortAndSearch form button {
+    border: none;
+    background-color: transparent;
+    color: var(--fc);
+    font-size: 16px
+}
+
+.categories .container .sortAndSearch form input {
+    padding: 4.5px;
+}
+
+.categories .container .sortAndSearch form button {
+    padding: 4.5px 12px;
+    border-left: 2px solid var(--fc);
+    transition: all .3s ease-in-out;
+}
+
+.categories .container .sortAndSearch form button:hover {
+    background-color: var(--sc);
+}
+
+.categories .container .sortAndSearch form button i {
+    transition: inherit
+}
+
+.categories .container .sortAndSearch form button:hover i {
+    transform: scale(1.3) rotateZ(360deg)
+}
+
+.categories .container .sortAndSearch a.sort {
+    color: var(--fc);
+    transition: background-color .3s ease-in-out;
+    border: 2px solid var(--fc);
+    padding: 4.5px 12px;
+}
+
+.categories .container .sortAndSearch a.sort:hover {
+    background-color: var(--sc);
+}
+
+.categories .container .category {
+    flex-basis: calc(50% - 10px);
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    color: var(--fc);
+    border-radius: 12px;
+    background-color: var(--c1);
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.categories .container .category:nth-child(odd) {
+    background-color: var(--c2)
+}
+
+.categories .container .category h2 {
+    margin: 0;
+    color: var(--sc)
+}
+
+.categories .container .category p {
+    margin: 16px 0
+}
+
+.categories .container .category .cat-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.categories .container .category .cat-foot .properties {
+    display: flex;
+    justify-content: center;
+}
+
+.categories .container .category .cat-foot .properties span {
+    display: block;
+    margin-right: 16px;
+    font-size: 20px;
+    
+}
+
+.categories .container .category .cat-foot .properties span i {
+    border: 2px solid var(--sc);
+    color: var(--sc);
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+.categories .container .category .cat-foot .properties span i.danger {
+    color: #000;
+    border-color: #000
+}
+
+.categories .container .category .cat-foot .operations {
+    
+}
+
+.categories .container .category:hover .operations {
+
+}
+
+.categories .container .category .cat-foot .operations a {
+
+}
+
+.categories .container .category .cat-foot .operations a.edit {
+
+}
+
+.categories .container .category .cat-foot .operations a.delete {
+
+}
+
+.categories .container a.add {
+    margin: 0
+}
+
+.categories .container .category .sub-categories {
+    margin-top: 16px
+}
+
+.categories .container .category .sub-categories h3 {
+    margin: 0;
+    margin-bottom: 4px;
+    color: var(--sc);
+}
+
+.categories .container .category .sub-categories ul {
+    padding: 0 24px
+}
+
+.categories .container .category .sub-categories ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0
+}
+
+.categories .container .category .sub-categories ul li span {
+
+}
+
+.categories .container .category .sub-categories ul li span.subCat-name {
+    font-weight: bold;
+    color: var(--fc);
+    font-size: 18px
+}
+
+.categories .container .category .sub-categories ul li span.subCat-ops {
+
+}
+
+.categories .container .category .sub-categories ul li span.subCat-ops a {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-left: 12px
+}
+/* End categories page properties */
+
+/* Start items page properties */
+.item-details {
+    
+}
+
+.item-details h1 {
+
+}
+
+.item-details .container {
+    width: 60%;
+}
+.item-details .container .card {
+    box-sizing: border-box;
+    border-bottom: 4px solid var(--sc);
+    padding-bottom: 16px;
+}
+
+.item-details .container .card .card-info {
+    display: flex;
+    justify-content: space-between
+}
+
+.item-details .container .card .card-info .item-images {
+    flex-basis: calc(40% - 20px);
+}
+.item-details .container .card .card-info .item-images .main-img {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 11px;
+}
+.item-details .container .card .card-info .item-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--sc);
+    background-color: var(--fc);
+}
+.item-details .container .card .card-info .item-images .main-img img {
+    border-radius: 12px 12px 0 0;
+}
+.item-details .container .card .card-info .item-images .secondary-imgs {
+    display: flex;
+    justify-content: space-between
+}
+.item-details .container .card .card-info .item-images .secondary-imgs figure {
+    flex-basis: calc(25% - 8px);
+    height: 60px;
+}
+.item-details .container .card .card-info .item-images .secondary-imgs figure img {
+    
+}
+.item-details .container .card .card-info .item-images .secondary-imgs figure:first-child img {
+    border-radius: 0 0 0 12px
+}
+.item-details .container .card .card-info .item-images .secondary-imgs figure:last-child img {
+    border-radius: 0 0 12px 0
+}
+
+.item-details .container .card .card-info .item-info {
+    flex-basis: calc(60% - 40px);
+    font-size: 18px
+}
+.item-details .container .card .card-info .item-info ul {
+
+}
+.item-details .container .card .card-info .item-info ul li {
+    margin-bottom: 6px;
+}
+.item-details .container .card .card-info .item-info ul li .q {
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+    color: var(--sc)
+}
+.item-details .container .card .card-info .item-info ul li .a {
+    color: var(--fc);
+    font-weight: bold;
+}
+.item-details .container .card .card-info .item-info ul li .a a {
+    color: var(--fc);
+    text-decoration: underline;
+}
+
+.item-details .container .card .card-info .item-info .discount {
+    box-sizing: border-box;
+    margin-top: 12px;
+    border: 2px solid var(--fc);
+    padding: 8px;
+    text-align: center;
+    background-color: var(--sc);
+}
+.item-details .container .card .card-info .item-info .discount span {
+    font-weight: bold;
+}
+.item-details .container .card .card-info .item-info .discount span.percent {
+    font-size: 24px;
+}
+.item-details .container .card .card-info .item-info .discount span.endsIn {
+    margin: 0 6px
+}
+.item-details .container .card .card-info .item-info .discount span.new-price {
+    color: #00bb00;
+    border: 2px solid #00bb00;
+    padding: 0 4px
+}
+
+.item-details .container .card .card-info .item-info .testmonials {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between
+}
+.item-details .container .card .card-info .item-info .testmonials .test-info {
+    flex-basis: 100px;
+    text-align: center;
+    border: 2px solid var(--fc);
+    /* border-radius: 12px; */
+    padding: 4px 0;
+    /* border-bottom-width: 4px; */
+    background-color: var(--sc)
+}
+.item-details .container .card .card-info .item-info .testmonials .test-info span {
+    display: block;
+    text-align: center;
+    color: var(--fc);
+    font-weight: bold
+}
+.item-details .container .card .card-info .item-info .testmonials .test-info span.ico {
+    font-size: 28px;
+    margin-bottom: 4px
+}
+.item-details .container .card .card-info .item-info .testmonials .test-info span.count {
+    font-size: 20px;
+}
+
+.item-details .container .card .card-info .item-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--sc);
+    padding: 8px;
+    color: var(--fc);
+    margin: 0
+}
+
+.item-details .container .card .card-info .item-info .item-des {
+    margin-top: 12px;
+    border: 2px solid var(--sc);
+}
+.item-details .container .card .card-info .item-info .item-des h2 {
+    
+}
+.item-details .container .card .card-info .item-info .item-des p {
+    padding: 8px;
+    font-size: 15px;
+}
+
+.item-details .container .card .card-info .item-info .item-tags {
+    margin-top: 12px;
+    border: 2px solid var(--sc);
+}
+.item-details .container .card .card-info .item-info .item-tags h2 {
+
+}
+.item-details .container .card .card-info .item-info .item-tags .tags {
+    padding: 8px;
+    padding-bottom: 0
+}
+.item-details .container .card .card-info .item-info .item-tags .tags .tag {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 2px solid var(--sc);
+    color: var(--fc);
+    padding: 2px 8px;
+    /* border-radius: 4px; */
+    display: inline-block
+}
+
+.item-details .container .card .card-info .item-info .operations {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between
+}
+.item-details .container .card .card-info .item-info .operations a {
+    box-sizing: border-box;
+    display: block;
+    flex-basis: calc(33.333% - 12px);
+    text-align: center;
+    border-radius: 0;
+}
+
+.item-details .comments {
+    display: block !important
+}
+
+.item-details .comments h2 {
+    color: var(--sc);
+    margin: 20px auto
+}
+
+.item-details .comments .comment {
+    margin: auto;
+    box-sizing: border-box
+}
+/* End items page properties */
+
+/* Start comments page properties */
+.comments-cont {
+
+}
+
+.comments-cont .container {
+
+}
+
+.comments-cont .container .head a {
+    color: var(--fc);
+    transition: background-color .3s ease-in-out;
+    border: 2px solid var(--fc);
+    padding: 4px 12px;
+    font-weight: bold;
+    line-height: 28px;
+    display: inline-block;
+    margin-right: 14px
+}
+
+.comments-cont .container .head a:hover {
+    background-color: var(--sc);
+}
+
+.comments-cont .container .head .totalSec {
+    display: inline-block
+}
+
+.comments-cont .container .comments {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.comments-cont .container .comments .comment {
+    box-sizing: border-box;
+    flex-basis: calc(50% - 10px);
+    padding: 8px;
+    padding-bottom: 12px;
+    background-color: var(--c2);
+    /* box-shadow: 0 2px 5px var(--fc); */
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    color: var(--fc);
+    border-radius: 12px;
+    margin-bottom: 20px
+}
+
+.comments-cont .container .comments .comment:nth-of-type(even) {
+    background-color: var(--c1)
+}
+
+.comments-cont .container .comments .comment header {
+    display: flex;
+    border-bottom: 2px solid var(--sc);
+}
+
+.comments-cont .container .comments .comment header section {
+    flex-basis: 50%;
+}
+
+.comments-cont .container .comments .comment header section figure {
+    width: 60px !important;
+    height: 60px;
+    border: 2px solid var(--sc);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comments-cont .container .comments .comment header section figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.comments-cont .container .comments .comment header section p {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 4px;
+    color: var(--sc)
+}
+
+.comments-cont .container .comments .comment .comment-text {
+    margin: 12px 0
+}
+
+.comments-cont .container .comments .comment footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.comments-cont .container .comments .comment footer .added-date {
+
+}
+
+.comments-cont .container .comments .comment footer .operations {
+    
+}
+
+textarea.comment {
+    height: 250px !important
+}
+/* End comments page properties */
+
+/* Start statistics page properties */
+.statistics {
+    
+}
+
+.statistics .top {
+
+}
+
+.statistics .top .container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.statistics .top .container .top-box {
+    box-sizing: border-box;
+    flex-basis: calc(50% - 10px);
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    padding: 12px;
+    border-radius: 12px;
+    color: var(--fc)
+}
+
+.statistics .top .container .top-box h2 {
+    margin: 0;
+    margin-bottom: 12px;
+    color: var(--sc)
+}
+
+.statistics .top .container .top-box .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-top: 2px solid var(--sc)
+}
+
+.statistics .top .container .top-box .row:first-of-type {
+    border: none
+}
+
+.statistics .top .container .top-box .row figure {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--sc);
+}
+
+.statistics .top .container .top-box .row figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.statistics .top .container .top-box .row .info {
+    text-align: center;
+    font-weight: bold;
+    flex-basis: 40px
+}
+
+.statistics .top .container .top-box .row .info.name {
+    flex-basis: 200px
+}
+
+.statistics .top .container .top-box .row .info.name a {
+    color: var(--sc);
+    text-decoration: underline
+}
+
+.statistics .top .container .top-box .row .info section {
+    line-height: 22px;
+    color: var(--sc);
+}
+
+.statistics .top .container .top-box .row .info p {
+    line-height: 22px
+}
+
+.statistics .charts {
+    margin-top: 24px
+}
+
+.statistics .charts .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistics .charts .container .chart-stat {
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    border: 2px solid var(--sc);
+    border-bottom-width: 4px;
+    border-radius: 12px;
+    color: var(--fc);
+    height: 400px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative
+}
+
+.statistics .charts .container .chart-stat .filter-stat {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid var(--sc);
+    width: 100%;
+    padding: 2px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    z-index: 2
+}
+
+.statistics .charts .container .chart-stat .filter-stat input, select {
+    box-sizing: border-box;
+    width: calc(25% - 10px);
+    border: 2px solid var(--sc);
+    background-color: transparent;
+    padding: 2px 4px;
+    border-radius: 8px
+}
+
+.statistics .charts .container .chart-stat .filter-stat select {
+    width: 40%
+}
+
+.statistics .charts .container .chart-stat .filter-stat button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2px 8px;
+    width: calc(25% - 10px);
+    font-size: 15px
+}
+
+.statistics .charts .container .chart-stat .totalSec {
+    width: max-content
+}
+
+#piechart, #curve_chart {
+    box-sizing: border-box;
+    width: 490px;
+    height: 390px;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, var(--c1), var(--c2));
+    position: relative;
+    z-index: 1;
+    padding: 10px
+}
+#piechart {
+    
+}
+#curve_chart {
+    width: 700px;
+}
+/* End statistics page properties */

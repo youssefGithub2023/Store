@@ -1,0 +1,9 @@
+# Protect directorys whith password (firewall)
+AuthType Basic
+AuthName "This Area is Password Protected"
+AuthUserFile C:\xampp\htdocs\store\.htpassword
+Require valid-user
+
+# Order deny,allow
+# Deny from All
+# Allow from 169.254.171.165

@@ -1,0 +1,5 @@
+# Prevent execute specifc files in specific directorys by regular exprition
+# <FilesMatch "\.(php|py|html?)">
+# Order allow,deny
+# Deny from All
+# </FilesMatch>
