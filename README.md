@@ -1,7 +1,7 @@
 # An e-commerce website that contains the following functionalities:
 
 ## User Management:
-    - __Visitors__ can change the website language, create an account, and log in.
+    - **Visitors** can change the website language, create an account, and log in.
     - **Users** have the ability to delete their accounts and log out.
 
 ## Profile Management:
