@@ -17,11 +17,30 @@
                 if ($getCatName->rowCount() > 0) {
                     $catName = $getCatName->fetchColumn();
 
+                    // Pagination
+                    $maxRecords = 12;
+                    $totalRecords = $con->prepare("SELECT COUNT(itemId) FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE catId = $catId AND accept = 1");
+                    $totalRecords->execute();
+                    $totalRecords = $totalRecords->fetchColumn();
+                    $pagesCount = ceil($totalRecords / $maxRecords);
+
+                    if (isset($_GET["page"])) {
+                        if (is_numeric($_GET["page"]) && $_GET["page"] >= 1 && $_GET["page"] <= $pagesCount) {
+                            $currentPage = intval($_GET["page"]);
+                        } else {
+                            $currentPage = 1;
+                        }
+                    } else {
+                        $currentPage = 1;
+                    }
+
+                    $offset = ($currentPage - 1) * 12;
                      // Get only accepted items (itemStatus = 1)
-                    $items =  $con->prepare("SELECT items.*, percent, endsIn FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE catId = $catId AND accept = 1 ORDER BY RAND()");
+                    $items =  $con->prepare("SELECT items.*, percent, endsIn FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE catId = $catId AND accept = 1 ORDER BY RAND() LIMIT $maxRecords OFFSET $offset");
                     $items->execute();
 
                     $h1Text = $catName . " categorie";
+
                 } else {
                     redirect("<section class='container'><section class='alert'>The category you selected is incorrect</section></section>", "index.php", 3);
                     exit();
@@ -77,10 +96,30 @@
                 }
                 $vCats = trim($vCats, ", ") . ")";
 
-                $items = $con->prepare("SELECT items.*, percent, endsIn FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE itemTags LIKE '%$tag%' AND accept = 1 AND catId IN $vCats ORDER BY RAND()");
+                // Pagination
+                $maxRecords = 12;
+                $totalRecords = $con->prepare("SELECT COUNT(itemId) FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE itemTags LIKE '%$tag%' AND accept = 1 AND catId IN $vCats");
+                $totalRecords->execute();
+                $totalRecords = $totalRecords->fetchColumn();
+                $pagesCount = ceil($totalRecords / $maxRecords);
+
+                if (isset($_GET["page"])) {
+                    if (is_numeric($_GET["page"]) && $_GET["page"] >= 1 && $_GET["page"] <= $pagesCount) {
+                        $currentPage = intval($_GET["page"]);
+                    } else {
+                        $currentPage = 1;
+                    }
+                } else {
+                    $currentPage = 1;
+                }
+
+                $offset = ($currentPage - 1) * 12;
+
+                $items = $con->prepare("SELECT items.*, percent, endsIn FROM `items` LEFT JOIN discounts ON items.discountId = discounts.discountId WHERE itemTags LIKE '%$tag%' AND accept = 1 AND catId IN $vCats ORDER BY RAND() LIMIT $maxRecords OFFSET $offset");
                 $items->execute();
 
                 $h1Text = $tag . " tag";
+
             } else {
                 redirect("<section class='container'><section class='alert'>You cannot visite this page directly</section></section>", "index.php", 3);
                 exit();
